@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garima — Product Management Portfolio</title>
+
+    <!-- link preview -->
+    <meta property="og:title" content="Garima — Product Management Portfolio">
+    <meta property="og:description" content="AI product management, product strategy and SaaS — 10 products across Shopify, Chrome, Atlassian and enterprise.">
+    <meta property="og:image" content="preview.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="description" content="AI product management, product strategy and SaaS — 10 products across Shopify, Chrome, Atlassian and enterprise.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        theme: {
+                            bg: '#FFFFFF',          /* Page white */
+                            surface: '#F4F7FB',     /* Very light blue band */
+                            surfaceAlt: '#EDF2F8',  /* Slightly deeper light blue */
+                            surfaceHover: '#E7EEF6',
+                            ink: '#0B0D12',         /* Near-black — buttons, dark bands */
+                            inkSoft: '#171B22',
+                            textMain: '#0B0D12',
+                            textSec: '#5B6675',     /* Muted grey-blue */
+                            textTer: '#8A94A3',
+                            border: '#E4EAF2',      /* Light blue-grey hairline */
+                            borderStrong: '#C9D5E4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom 3D Card Flip Styles */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 { transform: rotateY(180deg); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F4F7FB; }
+        ::-webkit-scrollbar-thumb { background: #C9D5E4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8A94A3; }
+
+        /* Eyebrow label used above every section heading */
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: #8A94A3;
+        }
+
+        /* Display heading treatment */
+        .display {
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            line-height: 0.98;
+        }
+
+        /* Anchor offset so the fixed header never covers a section title */
+        section[id] { scroll-margin-top: 90px; }
+    </style>
+</head>
+<body class="bg-theme-bg text-theme-textMain font-sans antialiased selection:bg-theme-ink selection:text-white flex flex-col min-h-screen">
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:top-3 focus:left-3 focus:bg-theme-ink focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">Skip to content</a>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-theme-bg/90 backdrop-blur-md border-b border-theme-border">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="text-lg font-extrabold tracking-tight text-theme-textMain">
+                Garima<span class="text-theme-borderStrong">.</span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-4 xl:gap-6 whitespace-nowrap text-sm font-medium text-theme-textSec">
+                <a href="#about" class="hover:text-theme-textMain transition-colors">About</a>
+                <a href="#experience" class="hover:text-theme-textMain transition-colors">Experience</a>
+                <a href="#products" class="hover:text-theme-textMain transition-colors">Products</a>
+                <a href="#projects" class="hover:text-theme-textMain transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-theme-textMain transition-colors">Skills</a>
+                <a href="#education" class="hover:text-theme-textMain transition-colors">Education</a>
+                <a href="#certifications" class="hover:text-theme-textMain transition-colors">Certifications</a>
+                <a href="#resume" class="hover:text-theme-textMain transition-colors">Resume</a>
+            </nav>
+            <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-theme-ink hover:bg-theme-inkSoft rounded-full transition-all">
+                Get in touch <span class="ml-1.5 text-xs">&#8599;</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main id="main" class="flex-grow">
+
+        <!-- ============================= HERO ============================= -->
+        <section id="home" class="pt-36 pb-24 px-6">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-20 items-start">
+                <div>
+                    <p class="eyebrow">Product management &middot; AI product management &middot; Product strategy</p>
+                    <h1 class="display text-[2.75rem] sm:text-6xl lg:text-[4.25rem] mt-5">
+                        Discovery to delivery, across ten products.
+                    </h1>
+                    <p class="mt-7 text-lg text-theme-textSec leading-relaxed max-w-xl">
+                        I'm Garima, an IIT Madras graduate working in product management across AI and SaaS &mdash; owning
+                        product strategy, roadmaps, requirements and prototypes from problem discovery through to execution.
+                    </p>
+                    <div class="mt-9 flex flex-wrap items-center gap-3">
+                        <a href="#products" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-theme-ink hover:bg-theme-inkSoft rounded-full transition-all">
+                            Explore the product work <span class="text-xs">&#8599;</span>
+                        </a>
+                        <a href="resume/Garima_Resume.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-theme-textMain bg-theme-bg border border-theme-borderStrong hover:border-theme-ink rounded-full transition-all">
+                            Download resume <span class="text-xs">&#8595;</span>
+                        </a>
+                    </div>
+                    <p class="mt-6 text-sm">
+                        <a href="https://www.linkedin.com/in/garima18" target="_blank" class="text-theme-textSec hover:text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong transition-colors">
+                            Connect on LinkedIn &#8599;
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Portfolio snapshot card -->
+                <div class="bg-theme-surface border border-theme-border rounded-2xl p-7 sm:p-9">
+                    <p class="eyebrow">Portfolio snapshot</p>
+                    <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-8">
+                        <div class="border-t border-theme-borderStrong pt-4">
+                            <div class="text-4xl font-extrabold tracking-tight">10</div>
+                            <div class="text-xs text-theme-textSec mt-1.5 leading-relaxed">Products contributed to at Explified</div>
+                        </div>
+                        <div class="border-t border-theme-borderStrong pt-4">
+                            <div class="text-4xl font-extrabold tracking-tight">4</div>
+                            <div class="text-xs text-theme-textSec mt-1.5 leading-relaxed">Product ecosystems</div>
+                        </div>
+                        <div class="border-t border-theme-borderStrong pt-4">
+                            <div class="text-4xl font-extrabold tracking-tight">8</div>
+                            <div class="text-xs text-theme-textSec mt-1.5 leading-relaxed">V1 PRDs authored</div>
+                        </div>
+                        <div class="border-t border-theme-borderStrong pt-4">
+                            <div class="text-4xl font-extrabold tracking-tight">50+</div>
+                            <div class="text-xs text-theme-textSec mt-1.5 leading-relaxed">Figma wireframes created</div>
+                        </div>
+                    </div>
+                    <p class="mt-8 pt-6 border-t border-theme-border text-xs text-theme-textTer leading-relaxed">
+                        Shopify Marketplace &middot; Chrome Extensions &middot; Atlassian Marketplace &middot; Internal enterprise SaaS
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= ABOUT ============================= -->
+        <section id="about" class="py-24 px-6 border-t border-theme-border bg-theme-surface">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-20">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2 class="display text-4xl sm:text-5xl mt-4">Research first.<br>Then scope.</h2>
+                </div>
+                <div class="space-y-5 text-theme-textSec leading-relaxed">
+                    <p class="text-lg text-theme-textMain">
+                        My work starts with the problem, not the feature list &mdash; user interviews, competitor benchmarking,
+                        community research and review mining, until the pain point is specific enough to build against.
+                    </p>
+                    <p>
+                        From there I write the requirements that make it buildable: PRDs, user journeys, functional
+                        specifications, prioritised backlogs and wireframes, handed to engineering with the decisions and
+                        trade-offs documented rather than implied.
+                    </p>
+                    <p>
+                        Most of my product exposure has been in AI &mdash; identifying where a model genuinely improves a
+                        workflow, defining what it should explain to the user, and keeping it honest about its own limits.
+                        The rest is conventional SaaS, which is a useful corrective: not every problem needs a model.
+                    </p>
+                    <p class="text-sm text-theme-textTer pt-2">
+                        Based in Bihar, India &middot; B.S. Data Science &amp; Applications, IIT Madras
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= EXPERIENCE ============================= -->
+        <section id="experience" class="py-24 px-6 border-t border-theme-border">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-20">
+                    <div class="lg:sticky lg:top-28 self-start">
+                        <p class="eyebrow">Experience</p>
+                        <h2 class="display text-4xl sm:text-5xl mt-4">Three teams,<br>one question.</h2>
+                        <p class="mt-5 text-theme-textSec text-sm leading-relaxed max-w-xs">
+                            What is actually worth building, and what evidence says so.
+                        </p>
+                    </div>
+
+                    <div class="space-y-14">
+                        <!-- Explified -->
+                        <article class="border-t border-theme-ink pt-7">
+                            <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                                <h3 class="text-xl font-bold tracking-tight">Product Management Intern &mdash; Explified</h3>
+                                <span class="text-xs font-semibold text-theme-textTer whitespace-nowrap">July 2026 &ndash; Present</span>
+                            </div>
+                            <ul class="mt-5 space-y-3.5 text-sm text-theme-textSec leading-relaxed list-disc pl-5 marker:text-theme-borderStrong">
+                                <li>Owned product strategy, V1 roadmaps and feature prioritisation across Shopify, the Chrome Web Store and the Atlassian Marketplace; authored 8 V1 PRDs and created 50+ Figma wireframes.</li>
+                                <li>Led product strategy and feature definition for five Shopify apps, all deployed on the Shopify App Store, spanning pricing, cart recovery, AI-powered bot-risk explanations, personalised inventory recommendations and return-cause intelligence.</li>
+                                <li>Defined the product roadmap and feature requirements for YT Insights V4, covering AI-powered performance intelligence, audience insights, competitive analysis and actionable content opportunities.</li>
+                                <li>Established V1 scope and product workflows for Lurph AI and Nexus AI, covering multi-model AI assistance, contextual memory, privacy controls and enterprise asset intelligence; built a high-fidelity, interactive Nexus AI prototype.</li>
+                            </ul>
+                            <a href="#products" class="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">
+                                See the ten products <span class="text-xs">&#8599;</span>
+                            </a>
+                        </article>
+
+                        <!-- Glass Vortax -->
+                        <article class="border-t border-theme-border pt-7">
+                            <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                                <h3 class="text-xl font-bold tracking-tight">Product Intern &mdash; Glass Vortax Pvt. Ltd.</h3>
+                                <span class="text-xs font-semibold text-theme-textTer whitespace-nowrap">June 2026 &ndash; July 2026</span>
+                            </div>
+                            <ul class="mt-5 space-y-3.5 text-sm text-theme-textSec leading-relaxed list-disc pl-5 marker:text-theme-borderStrong">
+                                <li>Ran product discovery through 5 user interviews, competitor analysis, app reviews and community research to identify unmet needs, prioritising pain points into product opportunities, user journeys, feature concepts and trust-focused product principles.</li>
+                                <li>Designed and evaluated AI-assisted features, interaction flows, trust mechanisms and engagement strategies through iterative usability evaluation.</li>
+                                <li>Benchmarked the product to identify gaps, recommend UX improvements and document decisions across discovery, validation and solution design.</li>
+                            </ul>
+                        </article>
+
+                        <!-- MIGRI -->
+                        <article class="border-t border-theme-border pt-7">
+                            <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                                <h3 class="text-xl font-bold tracking-tight">Business Development &amp; Strategy Intern &mdash; MIGRI Technologies</h3>
+                                <span class="text-xs font-semibold text-theme-textTer whitespace-nowrap">March 2026 &ndash; April 2026</span>
+                            </div>
+                            <ul class="mt-5 space-y-3.5 text-sm text-theme-textSec leading-relaxed list-disc pl-5 marker:text-theme-borderStrong">
+                                <li>Benchmarked 6 global enterprise AI firms across 4 product dimensions, delivering competitive positioning and feature recommendations that were adopted into the product roadmap and feature development.</li>
+                                <li>Mapped workflows across 5 industry verticals to identify UX friction and 5 development-ready improvements.</li>
+                                <li>Evaluated 10+ AI model benchmarks across 8 research papers and audited an AI-powered B2B SaaS product stack to identify technical, roadmap and UX improvement opportunities for the development team.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= PRODUCTS ============================= -->
+        <section id="products" class="py-24 px-6 border-t border-theme-border bg-theme-surface">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-20 items-end">
+                    <div>
+                        <p class="eyebrow">Product portfolio</p>
+                        <h2 class="display text-4xl sm:text-5xl mt-4">Ten products,<br>four ecosystems.</h2>
+                    </div>
+                    <p class="text-theme-textSec leading-relaxed">
+                        Product work at Explified across Shopify Marketplace, Chrome Extensions, the Atlassian Marketplace and
+                        internal enterprise SaaS. Each entry separates what shipped as a product capability from what is a
+                        proposed AI extension &mdash; opportunities are labelled as such, not presented as delivered features.
+                    </p>
+                </div>
+
+                <!-- ---------- Shopify ---------- -->
+                <div class="mt-16 pt-6 border-t border-theme-ink flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                    <h3 class="text-lg font-bold tracking-tight">01 &nbsp;Shopify Marketplace</h3>
+                    <p class="text-xs text-theme-textSec">5 products &middot; E-commerce &middot; SaaS &middot; Automation &middot; Retail intelligence</p>
+                </div>
+
+                <div class="mt-8 grid md:grid-cols-2 gap-5">
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">AI-powered SaaS &middot; Inventory intelligence</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">StockLyn</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow">
+                            Inventory intelligence for Shopify merchants &mdash; demand forecasting, stockout and overstock alerts,
+                            and replenishment recommendations from historical sales patterns.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Demand forecasting</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Replenishment</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Market research</span>
+                        </div>
+                        <button onclick="openModal('modal-1')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">Rule-based SaaS &middot; Pricing management</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">Price Gate</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow">
+                            Pricing operations through configurable rules and automated workflows &mdash; bulk price changes,
+                            catalogue consistency and validation against pricing errors.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Rule engine</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Bulk operations</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Non-AI product</span>
+                        </div>
+                        <button onclick="openModal('modal-2')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">E-commerce SaaS &middot; Conversion</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">Cart Mend</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow">
+                            Cart recovery built on drop-off behaviour &mdash; abandonment tracking, customer journey analysis,
+                            segmentation and recovery performance analytics.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Journey analysis</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Segmentation</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Conversion analytics</span>
+                        </div>
+                        <button onclick="openModal('modal-3')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">Automation SaaS &middot; Operations</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">Unturn</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow">
+                            Workflow automation for merchant operations &mdash; condition-based triggers, centralised process
+                            management and visibility into where effort is being wasted.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Workflow automation</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Wireframes</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Engineering handover</span>
+                        </div>
+                        <button onclick="openModal('modal-4')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors md:col-span-2">
+                        <p class="eyebrow">AI-powered SaaS &middot; Fraud detection &amp; marketing analytics</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">Traffiq</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow max-w-3xl">
+                            Bot detection and traffic intelligence &mdash; behavioural analysis and multi-signal evaluation feeding a
+                            risk-scoring engine, with AI-assisted explanations that turn technical detection signals into something a
+                            merchant can act on. Positioned as an analytics and marketing-data integrity layer.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Problem definition</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Detection architecture</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Risk scoring</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">MVP scoping &amp; PRD</span>
+                        </div>
+                        <button onclick="openModal('modal-5')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+                </div>
+
+                <!-- ---------- Chrome ---------- -->
+                <div class="mt-16 pt-6 border-t border-theme-ink flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                    <h3 class="text-lg font-bold tracking-tight">02 &nbsp;Chrome Extensions</h3>
+                    <p class="text-xs text-theme-textSec">2 products &middot; Generative AI &middot; Browser productivity &middot; Content intelligence</p>
+                </div>
+
+                <div class="mt-8 grid md:grid-cols-2 gap-5">
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">Analytics &middot; Creator economy</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">YT Insights V4</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow">
+                            YouTube analytics and content intelligence for creators, marketers and researchers &mdash; video and
+                            channel performance, competitor benchmarking and AI-assisted content insight.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Roadmap</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">UI/UX &amp; wireframing</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Competitor research</span>
+                        </div>
+                        <button onclick="openModal('modal-6')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">Multi-model AI assistant &middot; Generative AI</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">Lurph AI</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow">
+                            An all-in-one browser productivity assistant &mdash; image and document understanding, page chat,
+                            summarisation, writing and translation, across GPT, Claude, Gemini, Llama and DeepSeek.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Feature architecture</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Document intelligence</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">User journeys</span>
+                        </div>
+                        <button onclick="openModal('modal-7')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+                </div>
+
+                <!-- ---------- Atlassian ---------- -->
+                <div class="mt-16 pt-6 border-t border-theme-ink flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                    <h3 class="text-lg font-bold tracking-tight">03 &nbsp;Atlassian Marketplace</h3>
+                    <p class="text-xs text-theme-textSec">2 products &middot; Enterprise AI &middot; IT asset intelligence &middot; Migration intelligence</p>
+                </div>
+
+                <div class="mt-8 grid md:grid-cols-2 gap-5">
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">Enterprise AI &middot; Data reconciliation</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">Nexus AI</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow">
+                            Asset intelligence that builds one reliable view of an organisation's IT ecosystem &mdash; reconciling
+                            people, devices, identities and assets across disconnected systems, then detecting, assessing and
+                            prioritising the exceptions worth acting on.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">PRD &amp; MVP scope</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Integrations</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Interactive prototype</span>
+                        </div>
+                        <button onclick="openModal('modal-8')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">Enterprise SaaS &middot; Migration intelligence</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">Cloud Fix</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow">
+                            Jira Data Center to Jira Cloud migration, made visible before it breaks &mdash; readiness assessment,
+                            configuration and dependency analysis, risk categorisation and remediation guidance.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Technical product thinking</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">PRD</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Prototypes</span>
+                        </div>
+                        <button onclick="openModal('modal-9')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+                </div>
+
+                <!-- ---------- Internal ---------- -->
+                <div class="mt-16 pt-6 border-t border-theme-ink flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                    <h3 class="text-lg font-bold tracking-tight">04 &nbsp;Internal Enterprise Product</h3>
+                    <p class="text-xs text-theme-textSec">1 product &middot; Enterprise SaaS &middot; Collaboration &middot; Workplace productivity</p>
+                </div>
+
+                <div class="mt-8">
+                    <article class="bg-theme-bg border border-theme-border rounded-xl p-7 flex flex-col hover:border-theme-borderStrong transition-colors">
+                        <p class="eyebrow">Collaboration software &middot; Internal product</p>
+                        <h4 class="text-xl font-bold tracking-tight mt-3">Explified Team Chat</h4>
+                        <p class="mt-2.5 text-sm text-theme-textSec leading-relaxed flex-grow max-w-3xl">
+                            An internal collaboration platform centralising workplace communication, team coordination and meeting
+                            management, with role-based experiences for super administrators and regular employees.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Role-based design</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Meeting workflows</span>
+                            <span class="text-[11px] px-2.5 py-1 rounded-md border border-theme-border text-theme-textSec">Interactive prototype</span>
+                        </div>
+                        <button onclick="openModal('modal-10')" class="mt-6 self-start text-sm font-semibold text-theme-textMain underline underline-offset-4 decoration-theme-borderStrong hover:decoration-theme-ink transition-all">View details &#8599;</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= PROJECTS ============================= -->
+        <section id="projects" class="py-24 px-6 border-t border-theme-border">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-20 items-end">
+                    <div>
+                        <p class="eyebrow">Project experience</p>
+                        <h2 class="display text-4xl sm:text-5xl mt-4">Where the method<br>was the point.</h2>
+                    </div>
+                    <p class="text-theme-textSec leading-relaxed">
+                        Academic and team projects run as real product cycles &mdash; research, prioritised backlogs, prototypes
+                        and usability testing, with the reasoning kept visible rather than assumed.
+                    </p>
+                </div>
+
+                <div class="mt-14 grid lg:grid-cols-3 gap-5">
+                    <article class="bg-theme-surface border border-theme-border rounded-xl p-7 flex flex-col">
+                        <p class="eyebrow">GenAI application</p>
+                        <h3 class="text-xl font-bold tracking-tight mt-3">ShopAssist AI</h3>
+                        <p class="text-xs font-semibold text-theme-textTer mt-1.5">Product &amp; Scrum leadership</p>
+                        <ul class="mt-5 space-y-3 text-sm text-theme-textSec leading-relaxed list-disc pl-5 marker:text-theme-borderStrong flex-grow">
+                            <li>Led the end-to-end product lifecycle for a GenAI shopping assistant &mdash; problem framing, product requirements and delivery across 6 milestones for a 7-member Agile team.</li>
+                            <li>Ran user research across 3 personas, translating insights into 15+ SMART user stories and API requirements.</li>
+                            <li>Managed a MoSCoW-prioritised backlog, sprint planning and milestone tracking.</li>
+                        </ul>
+                    </article>
+
+                    <article class="bg-theme-surface border border-theme-border rounded-xl p-7 flex flex-col">
+                        <p class="eyebrow">Collaboration intelligence</p>
+                        <h3 class="text-xl font-bold tracking-tight mt-3">TeamPulse AI</h3>
+                        <p class="text-xs font-semibold text-theme-textTer mt-1.5">Design Thinking &amp; product management</p>
+                        <ul class="mt-5 space-y-3 text-sm text-theme-textSec leading-relaxed list-disc pl-5 marker:text-theme-borderStrong flex-grow">
+                            <li>Led product discovery using Design Thinking, with 6 user interviews identifying gaps in contribution visibility, workload balance and collaboration-risk detection.</li>
+                            <li>Translated research into strategy and MVP requirements through personas, journey mapping, Multi-Why analysis, HMWs and feature prioritisation.</li>
+                            <li>Iterated a high-fidelity prototype through usability testing and customer feedback, refining requirements around explainability, fairness, privacy and feasibility.</li>
+                        </ul>
+                    </article>
+
+                    <article class="bg-theme-surface border border-theme-border rounded-xl p-7 flex flex-col">
+                        <p class="eyebrow">RAG system design</p>
+                        <h3 class="text-xl font-bold tracking-tight mt-3">Virtual Teaching Assistant</h3>
+                        <p class="text-xs font-semibold text-theme-textTer mt-1.5">LLM application</p>
+                        <ul class="mt-5 space-y-3 text-sm text-theme-textSec leading-relaxed list-disc pl-5 marker:text-theme-borderStrong flex-grow">
+                            <li>Built a RAG-based teaching assistant integrating multiple knowledge sources to resolve student queries, including edge cases where single-source retrieval was insufficient.</li>
+                            <li>Implemented source attribution and answer verification against course materials to evaluate response reliability.</li>
+                            <li>Used that verification layer to mitigate hallucination and improve trust in AI-generated answers.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= SKILLS / COMPETENCIES ============================= -->
+        <section id="skills" class="py-24 px-6 bg-theme-ink text-white">
+            <div class="max-w-7xl mx-auto">
+                <p class="eyebrow" style="color:#8A94A3;">Core competencies</p>
+                <h2 class="display text-4xl sm:text-5xl mt-4">Across the whole<br>product lifecycle.</h2>
+
+                <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9">
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Product discovery</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">Problem identification, customer pain points, opportunity assessment.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Market research</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">Market sizing research, category assessment, industry analysis.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Competitive intelligence</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">Competitor benchmarking, feature comparison, gap analysis.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Product strategy</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">Positioning, value proposition, solution definition.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">AI product management</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">AI use-case identification, AI feature definition, intelligent workflows.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">PRD development</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">Functional requirements, feature specifications, acceptance criteria.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Roadmapping</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">MVP definition, feature sequencing, prioritisation.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">UX &amp; product design</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">User journeys, wireframes, interactive prototypes.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Technical product thinking</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">APIs, integrations, data reconciliation, AI workflows, risk scoring.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Stakeholder management</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">Requirement gathering and cross-functional coordination.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Product delivery</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">Developer handovers, iteration, requirement clarification.</p>
+                    </div>
+                    <div class="border-t border-white/25 pt-5">
+                        <h3 class="text-base font-bold tracking-tight">Agile &amp; Scrum</h3>
+                        <p class="mt-2 text-sm text-white/55 leading-relaxed">Sprint planning, backlog management, milestone tracking.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16 pt-8 border-t border-white/15 grid sm:grid-cols-2 gap-10">
+                    <div>
+                        <p class="eyebrow" style="color:#8A94A3;">Tools</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Figma</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Claude</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Mural</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Notion</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Power BI</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Excel</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Canva</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">PowerPoint</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Webflow</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="eyebrow" style="color:#8A94A3;">Also</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">SQL</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">User research</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Wireframing &amp; prototyping</span>
+                            <span class="text-xs px-3 py-1.5 rounded-full border border-white/25 text-white/75">Cross-functional collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= EDUCATION ============================= -->
+        <section id="education" class="py-24 px-6 border-t border-theme-border bg-theme-surface">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-20">
+                <div>
+                    <p class="eyebrow">Education</p>
+                    <h2 class="display text-4xl sm:text-5xl mt-4">Data science,<br>read as product.</h2>
+                </div>
+                <div>
+                    <div class="bg-theme-bg border border-theme-border rounded-xl p-8">
+                        <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                            <h3 class="text-xl font-bold tracking-tight">Indian Institute of Technology Madras</h3>
+                            <span class="text-xs font-semibold text-theme-textTer whitespace-nowrap">Sept 2022 &ndash; Sept 2026</span>
+                        </div>
+                        <p class="mt-3 text-theme-textSec">B.S. in Data Science &amp; Applications</p>
+                        <p class="mt-1 text-theme-textSec">Minor in Finance &amp; Economics</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= CERTIFICATIONS ============================= -->
+        <section id="certifications" class="py-24 px-6 border-t border-theme-border">
+            <div class="max-w-7xl mx-auto">
+                <p class="eyebrow">Certifications</p>
+                <h2 class="display text-4xl sm:text-5xl mt-4">Evidence, not adjectives.</h2>
+
+                <div class="mt-14 grid sm:grid-cols-3 gap-x-10 gap-y-8">
+                    <div class="border-t border-theme-ink pt-5">
+                        <h3 class="text-lg font-bold tracking-tight">AI Product Manager</h3>
+                        <p class="mt-2 text-sm text-theme-textSec">Professional Certificate &middot; IBM</p>
+                    </div>
+                    <div class="border-t border-theme-ink pt-5">
+                        <h3 class="text-lg font-bold tracking-tight">SQL (Intermediate)</h3>
+                        <p class="mt-2 text-sm text-theme-textSec">HackerRank</p>
+                    </div>
+                    <div class="border-t border-theme-ink pt-5">
+                        <h3 class="text-lg font-bold tracking-tight">Prompt Engineering</h3>
+                        <p class="mt-2 text-sm text-theme-textSec">IBM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= RESUME ============================= -->
+        <section id="resume" class="py-20 px-6 border-t border-theme-border bg-theme-surface">
+            <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-8">
+                <div>
+                    <p class="eyebrow">Resume</p>
+                    <h2 class="display text-3xl sm:text-4xl mt-3">The one-page version.</h2>
+                    <p class="mt-3 text-theme-textSec text-sm max-w-md leading-relaxed">
+                        Experience, projects, skills and certifications in a single PDF.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="resume/Garima_Resume.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-theme-ink hover:bg-theme-inkSoft rounded-full transition-all">
+                        <i class="fa-solid fa-download text-xs"></i> Download resume
+                    </a>
+                    <a href="https://adhesive-astronaut-949.notion.site/Garima-Product-Portfolio-37228461425480d79a45e3ea75c2dbb2" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-theme-textMain bg-theme-bg border border-theme-borderStrong hover:border-theme-ink rounded-full transition-all">
+                        Detailed product portfolio <span class="text-xs">&#8599;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= CONTACT ============================= -->
+        <section id="contact" class="py-28 px-6 bg-theme-ink text-white">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="display text-4xl sm:text-5xl">Building something that needs a product owner?</h2>
+                <p class="mt-6 text-white/60 leading-relaxed">
+                    I'm looking for product management roles where discovery, evidence and clear requirements matter &mdash;
+                    particularly in AI and SaaS.
+                </p>
+                <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+                    <a href="mailto:garima.intern18@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-theme-ink bg-white hover:bg-white/90 rounded-full transition-all">
+                        garima.intern18@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/garima18" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white border border-white/35 hover:border-white rounded-full transition-all">
+                        Connect on LinkedIn <span class="text-xs">&#8599;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="px-6 py-10 border-t border-theme-border bg-theme-bg">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-start justify-between gap-6 text-sm">
+            <div>
+                <p class="font-bold tracking-tight">Garima &mdash; Product Portfolio</p>
+                <p class="text-theme-textSec text-xs mt-1">Product management &middot; AI product management &middot; SaaS</p>
+            </div>
+            <div class="text-theme-textSec text-xs flex flex-wrap items-center gap-2">
+                <a href="mailto:garima.intern18@gmail.com" class="hover:text-theme-textMain transition-colors">garima.intern18@gmail.com</a>
+                <span>&middot;</span>
+                <a href="https://www.linkedin.com/in/garima18" target="_blank" class="hover:text-theme-textMain transition-colors">LinkedIn &#8599;</a>
+            </div>
+            <p class="text-theme-textTer text-xs">&copy; 2026 Garima</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================= -->
+    <!-- PRODUCT DETAIL MODALS                                          -->
+    <!-- ============================================================= -->
+
+    <!-- MODAL 1: StockLyn -->
+    <div id="modal-1" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-1')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Shopify Marketplace &middot; AI-powered SaaS</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">StockLyn &mdash; AI-powered inventory intelligence</h3>
+            <p class="text-xs text-theme-textTer mb-6">Inventory management &amp; retail intelligence &middot; Team: Garima &amp; Abhishek</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Product overview</h4>
+                    <p>An inventory intelligence solution helping Shopify merchants optimise stock management, improve inventory visibility and make data-driven purchasing decisions. It addresses inventory inefficiency through predictive insight, intelligent stock monitoring and replenishment recommendations.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Key product &amp; AI capabilities</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Demand forecasting</span> &mdash; analyse historical sales patterns and inventory trends to estimate future product demand.</li>
+                        <li><span class="text-theme-textMain font-medium">Predictive inventory alerts</span> &mdash; identify potential stockouts and overstock situations.</li>
+                        <li><span class="text-theme-textMain font-medium">Smart replenishment</span> &mdash; generate inventory replenishment recommendations.</li>
+                        <li><span class="text-theme-textMain font-medium">Inventory intelligence</span> &mdash; identify fast-moving, slow-moving and underperforming products.</li>
+                        <li><span class="text-theme-textMain font-medium">Inventory analytics</span> &mdash; centralised inventory performance insight.</li>
+                        <li><span class="text-theme-textMain font-medium">Decision support</span> &mdash; translate inventory data into actionable merchant insight.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Market research within the Shopify inventory management ecosystem.</li>
+                        <li>Competitor benchmarking and feature-gap analysis.</li>
+                        <li>Merchant pain point identification and opportunity sizing.</li>
+                        <li>Product discovery and feature definition.</li>
+                        <li>Product requirements and user workflows.</li>
+                        <li>Feature prioritisation and product documentation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Price Gate -->
+    <div id="modal-2" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-2')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Shopify Marketplace &middot; Rule-based SaaS</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">Price Gate &mdash; pricing management platform</h3>
+            <p class="text-xs text-theme-textTer mb-6">E-commerce pricing &amp; automation &middot; Team: Garima &amp; Anees &middot; Non-AI product</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Product overview</h4>
+                    <p>A pricing management application that simplifies product pricing operations through configurable rules and automated workflows, letting merchants manage prices efficiently, hold pricing consistent and cut repetitive manual updates across catalogues.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Key product capabilities</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Rule-based pricing</span> &mdash; configure pricing rules against defined business requirements.</li>
+                        <li><span class="text-theme-textMain font-medium">Bulk price management</span> &mdash; apply pricing changes across many products at once.</li>
+                        <li><span class="text-theme-textMain font-medium">Automated price updates</span> &mdash; execute configured changes through automated workflows.</li>
+                        <li><span class="text-theme-textMain font-medium">Pricing consistency</span> &mdash; maintain standardised pricing across catalogues.</li>
+                        <li><span class="text-theme-textMain font-medium">Centralised control</span> &mdash; manage pricing operations from one interface.</li>
+                        <li><span class="text-theme-textMain font-medium">Pricing validation</span> &mdash; surface inconsistencies and configuration errors.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Category research across Shopify pricing management.</li>
+                        <li>Competitor benchmarking and feature comparison.</li>
+                        <li>Identified merchant pain points in manual pricing operations.</li>
+                        <li>Defined functional requirements and product workflows.</li>
+                        <li>Feature prioritisation and product documentation.</li>
+                        <li>Coordinated requirements with development stakeholders.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Cart Mend -->
+    <div id="modal-3" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-3')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Shopify Marketplace &middot; E-commerce SaaS</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">Cart Mend &mdash; cart recovery &amp; conversion optimisation</h3>
+            <p class="text-xs text-theme-textTer mb-6">E-commerce growth &amp; conversion &middot; Team: Garima &amp; Sparsh</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Product overview</h4>
+                    <p>A cart recovery solution addressing abandonment and purchase conversion, built around understanding where and why customers drop off rather than simply resending reminders.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Key product capabilities</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Cart abandonment tracking</span> &mdash; identify abandoned carts and monitor recovery opportunities.</li>
+                        <li><span class="text-theme-textMain font-medium">Customer journey analysis</span> &mdash; understand where customers drop off in the purchase journey.</li>
+                        <li><span class="text-theme-textMain font-medium">Recovery workflows</span> &mdash; support structured recovery processes.</li>
+                        <li><span class="text-theme-textMain font-medium">Customer segmentation</span> &mdash; organise recovery opportunities by customer and cart attributes.</li>
+                        <li><span class="text-theme-textMain font-medium">Conversion analytics</span> &mdash; track recovery performance and conversion outcomes.</li>
+                    </ul>
+                </div>
+                <div class="p-5 bg-theme-surface border border-dashed border-theme-borderStrong rounded-xl">
+                    <h4 class="text-theme-textMain font-semibold mb-2">Potential AI applications</h4>
+                    <p class="text-xs mb-3 text-theme-textTer">Proposed extensions, not delivered features.</p>
+                    <ul class="space-y-1.5 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Intelligent identification of abandonment patterns.</li>
+                        <li>Predictive customer segmentation.</li>
+                        <li>Personalised recovery recommendations.</li>
+                        <li>AI-assisted conversion bottleneck analysis.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Researched the cart recovery and conversion optimisation market.</li>
+                        <li>Analysed competitor applications and feature offerings.</li>
+                        <li>Evaluated customer journey friction points.</li>
+                        <li>Defined product requirements and feature specifications.</li>
+                        <li>Contributed user workflows and feature prioritisation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: Unturn -->
+    <div id="modal-4" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-4')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Shopify Marketplace &middot; Workflow automation SaaS</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">Unturn &mdash; e-commerce workflow automation</h3>
+            <p class="text-xs text-theme-textTer mb-6">E-commerce operations &amp; automation &middot; Team: Garima &amp; Sparsh</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Product overview</h4>
+                    <p>A workflow automation solution that simplifies merchant operations, reduces repetitive manual process and streamlines business workflows through configurable automation and centralised workflow management.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Key product capabilities</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Workflow automation</span> &mdash; simplify repetitive merchant operations.</li>
+                        <li><span class="text-theme-textMain font-medium">Automated triggers</span> &mdash; execute actions on predefined conditions and business rules.</li>
+                        <li><span class="text-theme-textMain font-medium">Workflow management</span> &mdash; organise and manage operational processes.</li>
+                        <li><span class="text-theme-textMain font-medium">Operational visibility</span> &mdash; monitor execution and identify inefficiency.</li>
+                        <li><span class="text-theme-textMain font-medium">Centralised operations</span> &mdash; streamline recurring business activity.</li>
+                    </ul>
+                </div>
+                <div class="p-5 bg-theme-surface border border-dashed border-theme-borderStrong rounded-xl">
+                    <h4 class="text-theme-textMain font-semibold mb-2">Potential AI applications</h4>
+                    <p class="text-xs mb-3 text-theme-textTer">Proposed extensions, not delivered features.</p>
+                    <ul class="space-y-1.5 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>AI-assisted workflow recommendations.</li>
+                        <li>Intelligent identification of operational bottlenecks.</li>
+                        <li>Contextual automation suggestions.</li>
+                        <li>Natural-language workflow configuration.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Product and competitor research.</li>
+                        <li>Analysed operational workflows and merchant pain points.</li>
+                        <li>Defined product requirements and functional specifications.</li>
+                        <li>Developed user workflows and feature documentation.</li>
+                        <li>Wireframes and product handover.</li>
+                        <li>Coordinated feature requirements with engineering stakeholders.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 5: Traffiq -->
+    <div id="modal-5" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-5')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Shopify Marketplace &middot; AI-powered SaaS</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">Traffiq &mdash; AI bot detection &amp; traffic intelligence</h3>
+            <p class="text-xs text-theme-textTer mb-6">Fraud detection &amp; marketing analytics &middot; Team: Garima &amp; Sparsh</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Problem &amp; positioning</h4>
+                    <p>Fake traffic, bot-generated accounts, automated cart activity and suspicious checkout attempts distort store analytics and degrade marketing performance. Traffiq is positioned as an analytics and marketing-data integrity layer &mdash; helping merchants separate genuine customer activity from probable fraud.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Key product &amp; AI capabilities</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Behavioural analysis</span> &mdash; visitor sessions, browsing patterns and request frequency.</li>
+                        <li><span class="text-theme-textMain font-medium">Multi-signal detection</span> &mdash; IP and ASN information, device and browser signals, geographic patterns, cart behaviour.</li>
+                        <li><span class="text-theme-textMain font-medium">Risk scoring engine</span> &mdash; score sessions against behavioural and technical signals.</li>
+                        <li><span class="text-theme-textMain font-medium">AI-assisted explanations</span> &mdash; translate technical detection signals into understandable accounts of what looked suspicious and why.</li>
+                        <li><span class="text-theme-textMain font-medium">Fake account &amp; automated cart detection</span> &mdash; flag automated sign-ups and unusual checkout attempts.</li>
+                        <li><span class="text-theme-textMain font-medium">Traffic intelligence dashboard</span> &mdash; traffic-quality insight and suspicious activity trends.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Defined the core problem statement and product positioning.</li>
+                        <li>Competitor research across bot detection and fraud prevention.</li>
+                        <li>Identified merchant pain points around fake traffic and unreliable marketing analytics.</li>
+                        <li>Worked on the AI detection architecture and product workflows.</li>
+                        <li>Defined detection signals, risk-scoring requirements and AI explanation requirements.</li>
+                        <li>MVP scoping, PRD development and feature prioritisation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 6: YT Insights V4 -->
+    <div id="modal-6" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-6')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Chrome Extension &middot; Analytics &amp; AI-assisted insight</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">YT Insights V4 &mdash; YouTube analytics &amp; content intelligence</h3>
+            <p class="text-xs text-theme-textTer mb-6">Creator economy &amp; content intelligence &middot; Team: Garima &amp; Sailaja</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Product overview</h4>
+                    <p>A browser extension helping creators, marketers and researchers understand video and channel performance, turning YouTube performance data into structured insight for content evaluation, competitor research and content strategy.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Key product &amp; AI capabilities</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Video performance analysis</span> &mdash; key metrics and engagement indicators.</li>
+                        <li><span class="text-theme-textMain font-medium">Channel intelligence</span> &mdash; channel-level performance and content patterns.</li>
+                        <li><span class="text-theme-textMain font-medium">Competitor benchmarking</span> &mdash; compare channels and competing content.</li>
+                        <li><span class="text-theme-textMain font-medium">Performance evaluation</span> &mdash; identify patterns in high-performing content.</li>
+                        <li><span class="text-theme-textMain font-medium">AI-assisted insight</span> &mdash; convert performance information into readable content intelligence.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Defined the V4 product roadmap and feature requirements, covering AI-powered performance intelligence, audience insight, competitive analysis and actionable content opportunities.</li>
+                        <li>Competitor research across YouTube analytics and creator intelligence tools.</li>
+                        <li>Evaluated existing features and identified improvement opportunities.</li>
+                        <li>UI/UX design and wireframing.</li>
+                        <li>Defined user workflows and feature specifications.</li>
+                        <li>Coordinated product handover and development requirements.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 7: Lurph AI -->
+    <div id="modal-7" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-7')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Chrome Extension &middot; Multi-model AI assistant</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">Lurph AI &mdash; all-in-one AI browser productivity assistant</h3>
+            <p class="text-xs text-theme-textTer mb-6">Generative AI &amp; productivity &middot; Team: Garima &amp; Sailaja</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Product overview</h4>
+                    <p>A browser assistant consolidating several AI utilities into one extension &mdash; analysing images, understanding documents, summarising information, interacting with PDFs, translating content and improving written communication without switching between applications.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Feature architecture</h4>
+                    <p class="mb-3">Capabilities were structured into distinct functional modules rather than a flat feature list:</p>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Content intelligence</span> &mdash; image analysis, key takeaways, page summarisation, contextual page chat.</li>
+                        <li><span class="text-theme-textMain font-medium">PDF &amp; document intelligence</span> &mdash; PDF summarisation, document Q&amp;A, information extraction.</li>
+                        <li><span class="text-theme-textMain font-medium">Writing &amp; communication</span> &mdash; email rewriter and helper, text rewriting, grammar improvement, tone adaptation.</li>
+                        <li><span class="text-theme-textMain font-medium">Language intelligence</span> &mdash; translation that holds intended meaning and context.</li>
+                        <li><span class="text-theme-textMain font-medium">Search &amp; multi-model access</span> &mdash; AI search with citations across GPT, Claude, Gemini, Llama and DeepSeek, with searchable chat history.</li>
+                        <li><span class="text-theme-textMain font-medium">Browser integration</span> &mdash; sidebar, popup, right-click actions and keyboard shortcuts.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Established V1 scope and product workflows, covering multi-model AI assistance, contextual memory and privacy controls.</li>
+                        <li>AI productivity market research and competitor benchmarking.</li>
+                        <li>Identified the opportunity to consolidate scattered AI utilities into one product experience.</li>
+                        <li>Structured AI features into distinct functional modules.</li>
+                        <li>Product requirements and feature specifications.</li>
+                        <li>User journeys and UI/UX wireframes.</li>
+                        <li>Feature prioritisation and product handover.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 8: Nexus AI -->
+    <div id="modal-8" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-8')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Atlassian Marketplace &middot; AI-powered enterprise solution</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">Nexus AI &mdash; enterprise asset intelligence</h3>
+            <p class="text-xs text-theme-textTer mb-6">Enterprise AI, IT asset intelligence &amp; data reconciliation &middot; Team: Garima &amp; Sparsh</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Problem &amp; value proposition</h4>
+                    <p>Organisations keep employee information, device inventories, identity records and IT assets across disconnected platforms, producing fragmented data, duplicates and mismatched records. Nexus AI builds one reliable view of the IT ecosystem: connect fragmented data, identify inconsistencies, prioritise critical exceptions and keep enterprise records accurate and synchronised.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Reconcile &mdash; automated data reconciliation</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Multi-source integration across configured enterprise systems.</li>
+                        <li>People, device, asset and identity reconciliation across HR, identity, device and asset management platforms.</li>
+                        <li>Record matching on identifiers and matching attributes.</li>
+                        <li>Discrepancy identification &mdash; missing records, mismatched attributes, broken relationships.</li>
+                    </ul>
+                    <p class="mt-3 text-xs text-theme-textTer">Connected data sources include Google Cloud Identity, BambooHR, Namely, Miradore, Jira Assets and Jira Service Management.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Exception management &mdash; detect, assess, prioritise</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Detect</span> &mdash; apply detection rules, find mismatches, generate evidence-backed exceptions and prevent duplicates across reconciliation runs.</li>
+                        <li><span class="text-theme-textMain font-medium">Assess</span> &mdash; evaluate impact and severity against supporting evidence and source records.</li>
+                        <li><span class="text-theme-textMain font-medium">Prioritise</span> &mdash; calculate risk and prioritisation scores, surface critical exceptions, update existing ones as evidence changes.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Audit &amp; traceability</h4>
+                    <p>Track what changed, when, and where it originated; access original source records; maintain an end-to-end history of reconciliation and exception activity, with evidence retained to support audit and compliance requirements.</p>
+                </div>
+                <div class="p-5 bg-theme-surface border border-dashed border-theme-borderStrong rounded-xl">
+                    <h4 class="text-theme-textMain font-semibold mb-2">AI product opportunities</h4>
+                    <p class="text-xs mb-3 text-theme-textTer">Potential capability extensions, distinct from the confirmed functional workflows above.</p>
+                    <ul class="space-y-1.5 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Intelligent record matching across enterprise systems.</li>
+                        <li>Anomaly detection for unusual data patterns.</li>
+                        <li>Automated exception classification and risk assessment.</li>
+                        <li>AI-generated explanations of technical discrepancies, with suggested remediation.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Established V1 scope and product workflows for enterprise asset intelligence; built a high-fidelity, interactive prototype.</li>
+                        <li>Atlassian Marketplace category research and enterprise software opportunity assessment.</li>
+                        <li>Competitive analysis and product differentiation.</li>
+                        <li>Product positioning and problem definition.</li>
+                        <li>PRDs, functional requirements and feature documentation.</li>
+                        <li>Defined the Reconcile, Detect, Assess and Prioritise workflows.</li>
+                        <li>Integration requirements and exception management workflows.</li>
+                        <li>Wireframes, MVP definition and feature prioritisation with engineering stakeholders.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 9: Cloud Fix -->
+    <div id="modal-9" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-9')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Atlassian Marketplace &middot; AI-driven migration solution</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">Cloud Fix &mdash; Jira cloud migration intelligence</h3>
+            <p class="text-xs text-theme-textTer mb-6">Enterprise SaaS migration &amp; technical intelligence &middot; Team: Garima &amp; Sparsh</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Product overview</h4>
+                    <p>A migration intelligence solution for organisations moving from Jira Data Center to Jira Cloud. It addresses incompatible configurations, broken dependencies, application compatibility issues and workflow disruption &mdash; identifying problems before migration rather than during it, with remediation guidance attached.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Key product &amp; AI capabilities</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Migration readiness assessment</span> &mdash; evaluate Jira environments and surface blockers.</li>
+                        <li><span class="text-theme-textMain font-medium">Configuration analysis</span> &mdash; identify configuration differences and compatibility issues.</li>
+                        <li><span class="text-theme-textMain font-medium">Dependency detection</span> &mdash; surface dependencies that could affect migration outcomes.</li>
+                        <li><span class="text-theme-textMain font-medium">Risk identification</span> &mdash; detect and categorise risks by potential impact.</li>
+                        <li><span class="text-theme-textMain font-medium">AI-assisted explanations</span> &mdash; translate technical migration issues into understandable descriptions.</li>
+                        <li><span class="text-theme-textMain font-medium">Remediation recommendations</span> &mdash; suggest corrective actions for identified issues.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Atlassian Marketplace research and category analysis.</li>
+                        <li>Evaluated Jira migration challenges and customer pain points.</li>
+                        <li>Analysed competing migration solutions.</li>
+                        <li>Product positioning and problem definition.</li>
+                        <li>PRDs and functional feature specifications.</li>
+                        <li>User workflows and product requirements.</li>
+                        <li>Interactive prototypes and wireframes.</li>
+                        <li>Product documentation for engineering handover.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 10: Explified Team Chat -->
+    <div id="modal-10" class="fixed inset-0 z-[60] hidden items-center justify-center bg-theme-ink/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-theme-bg border border-theme-border rounded-2xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('modal-10')" class="absolute top-6 right-6 text-theme-textSec hover:text-theme-textMain text-lg" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="eyebrow">Internal enterprise SaaS &middot; Collaboration software</span>
+            <h3 class="text-2xl font-bold tracking-tight mt-3 mb-1">Explified Team Chat &mdash; enterprise collaboration platform</h3>
+            <p class="text-xs text-theme-textTer mb-6">Team collaboration &amp; workplace productivity &middot; Internal Explified product</p>
+
+            <div class="space-y-6 text-theme-textSec text-sm leading-relaxed">
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Product overview</h4>
+                    <p>An internal platform centralising workplace communication, team coordination and meeting management, giving employees a structured place to communicate, collaborate across teams, share information and coordinate activity through role-based functionality.</p>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">Key product capabilities</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li><span class="text-theme-textMain font-medium">Real-time messaging</span> &mdash; individual and group conversations.</li>
+                        <li><span class="text-theme-textMain font-medium">Team channels</span> &mdash; organised spaces for departments, teams and projects.</li>
+                        <li><span class="text-theme-textMain font-medium">Meeting management</span> &mdash; schedule meetings, manage participants, coordinate discussion.</li>
+                        <li><span class="text-theme-textMain font-medium">Role-based access</span> &mdash; distinct permissions for super administrators and regular employees.</li>
+                        <li><span class="text-theme-textMain font-medium">File sharing and task coordination</span> within conversations and channels.</li>
+                        <li><span class="text-theme-textMain font-medium">Administrative controls</span> &mdash; manage users, channels and organisational settings.</li>
+                    </ul>
+                </div>
+                <div class="p-5 bg-theme-surface border border-dashed border-theme-borderStrong rounded-xl">
+                    <h4 class="text-theme-textMain font-semibold mb-2">AI product opportunities</h4>
+                    <p class="text-xs mb-3 text-theme-textTer">Proposed extensions, not delivered features.</p>
+                    <ul class="space-y-1.5 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>AI-powered meeting summaries.</li>
+                        <li>Automatic action-item extraction.</li>
+                        <li>Intelligent conversation search and contextual knowledge retrieval.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-theme-textMain font-semibold mb-2">My contribution</h4>
+                    <ul class="space-y-2 list-disc pl-5 marker:text-theme-borderStrong">
+                        <li>Feature conceptualisation and stakeholder requirement gathering.</li>
+                        <li>User workflows for messaging, channels and meeting scheduling.</li>
+                        <li>Defined role-based experiences for super administrators and regular users.</li>
+                        <li>Meeting scheduling forms and participant-selection workflows.</li>
+                        <li>UI/UX wireframes and interactive prototypes.</li>
+                        <li>Refined requirements against usability and stakeholder needs.</li>
+                        <li>Coordinated product specifications and development handover.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function openModal(id) {
+            var m = document.getElementById(id);
+            if (!m) return;
+            m.classList.remove('hidden');
+            m.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            var m = document.getElementById(id);
+            if (!m) return;
+            m.classList.add('hidden');
+            m.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        /* click the backdrop to close */
+        document.querySelectorAll('[id^="modal-"]').forEach(function (m) {
+            m.addEventListener('click', function (e) {
+                if (e.target === m) closeModal(m.id);
+            });
+        });
+        /* Escape closes whichever modal is open */
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape') return;
+            document.querySelectorAll('[id^="modal-"]').forEach(function (m) {
+                if (!m.classList.contains('hidden')) closeModal(m.id);
+            });
+        });
+    </script>
+
+    <!-- ============================================================= -->
+    <!-- GIA · PORTFOLIO ASSISTANT                                      -->
+    <!-- Self-contained. Delete this whole block to remove Gia.         -->
+    <!-- Expects the animated webp at: Chatbot/assistant.webp           -->
+    <!-- ============================================================= -->
+    <style>
+        #gia-root {
+            --gia-bg: #FFFFFF;
+            --gia-surface: #F4F7FB;
+            --gia-surface-2: #EDF2F8;
+            --gia-ink: #0B0D12;
+            --gia-ink-soft: #171B22;
+            --gia-text: #0B0D12;
+            --gia-text-sec: #5B6675;
+            --gia-border: #E4EAF2;
+            --gia-border-strong: #C9D5E4;
+            --gia-avatar: 72px;           /* launcher size — tweak here */
+            --gia-lift: 76px;             /* clears the "Powered by Netlify" badge */
+            --gia-head-h: 84px;           /* height of the dark header strip */
+            --gia-crest: 10px;            /* hair showing above the box */
+            --gia-figure: calc((var(--gia-head-h) + var(--gia-crest)) / 0.929);
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        /* ---------- Launcher ---------- */
+        #gia-launcher {
+            position: fixed;
+            right: 24px;
+            bottom: var(--gia-lift);
+            z-index: 40;                  /* under modals (z-60) by design */
+            opacity: 0;
+            animation: gia-fade .5s ease .6s forwards,
+                       gia-nudge 9s ease-in-out 3.5s infinite;
+        }
+        @keyframes gia-fade { to { opacity: 1; } }
+        /* a short double-bob once every 9s — a glance, not a dance */
+        @keyframes gia-nudge {
+            0%, 86%, 100% { transform: translateY(0); }
+            90%           { transform: translateY(-7px); }
+            93%           { transform: translateY(0); }
+            96%           { transform: translateY(-3px); }
+        }
+
+        .gia-bubble {
+            position: relative;
+            background: var(--gia-bg);
+            border: 1px solid var(--gia-border-strong);
+            color: var(--gia-text);
+            display: inline-flex;
+            align-items: center;
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: .01em;
+            padding: 9px 17px;
+            border-radius: 9999px;
+            white-space: nowrap;
+            box-shadow: 0 10px 26px -14px rgba(11,13,18,.45);
+            transition: border-color .25s ease, color .25s ease, background .25s ease;
+        }
+        .gia-bubble::after {        /* thought-bubble tail */
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 9px; height: 9px;
+            margin-left: -4.5px;
+            background: var(--gia-bg);
+            border-right: 1px solid var(--gia-border-strong);
+            border-bottom: 1px solid var(--gia-border-strong);
+            transform: rotate(45deg);
+        }
+        .gia-bubble i { color: var(--gia-text-sec); margin-right: 6px; font-size: 11px; }
+
+        #gia-fab {
+            background: none;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+            transition: transform .25s cubic-bezier(.2,.8,.3,1);
+        }
+        #gia-fab img {
+            width: var(--gia-avatar);
+            height: auto;
+            display: block;
+            pointer-events: none;
+            filter: drop-shadow(0 10px 18px rgba(11,13,18,.28));
+        }
+        #gia-fab:hover { transform: scale(1.07) translateY(-2px); }
+        #gia-fab:active { transform: scale(.97); }
+        #gia-fab:focus-visible { outline: 2px solid var(--gia-ink); outline-offset: 6px; }
+        #gia-fab:hover .gia-bubble,
+        #gia-fab:focus-visible .gia-bubble {
+            border-color: var(--gia-ink);
+            background: var(--gia-surface);
+        }
+        #gia-fab:hover .gia-bubble::after { border-color: var(--gia-ink); background: var(--gia-surface); }
+
+        /* ---------- Panel ---------- */
+        #gia-panel {
+            position: fixed;
+            right: 24px;
+            bottom: var(--gia-lift);
+            z-index: 70;
+            width: 380px;
+            max-width: calc(100vw - 32px);
+            height: 560px;
+            max-height: calc(100vh - var(--gia-lift) - 24px);
+            display: none;
+            flex-direction: column;
+            background: var(--gia-bg);
+            border: 1px solid var(--gia-border);
+            border-radius: 1rem;
+            overflow: visible;        /* only her head crests the top edge */
+            box-shadow: 0 30px 70px -22px rgba(11,13,18,.45);
+        }
+        #gia-panel.gia-open { display: flex; animation: gia-panel-in .28s cubic-bezier(.2,.8,.3,1); }
+        @keyframes gia-panel-in {
+            from { opacity: 0; transform: translateY(16px) scale(.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .gia-head {
+            display: flex; align-items: center;
+            height: var(--gia-head-h);
+            padding: 0 16px;
+            padding-left: calc(var(--gia-figure) + 24px);   /* clear the figure */
+            border-bottom: 1px solid var(--gia-border);
+            background: var(--gia-ink);
+            border-radius: 1rem 1rem 0 0;
+            flex-shrink: 0;
+        }
+
+        .gia-avatar {
+            position: absolute;
+            left: 12px;
+            width: var(--gia-figure);
+            height: auto;
+            /* lift her so her hair clears the rim by exactly --gia-crest */
+            top: calc(-1 * var(--gia-crest) - var(--gia-figure) * 0.0156);
+            z-index: 3;
+            pointer-events: none;
+            transform-origin: 50% 94%;          /* rocks from where she sits */
+            animation: gia-sit 5.5s ease-in-out infinite;
+            filter: drop-shadow(0 6px 12px rgba(11,13,18,.35));
+        }
+        @keyframes gia-sit {
+            0%, 100% { transform: rotate(-1.8deg); }
+            50%      { transform: rotate(1.8deg); }
+        }
+        .gia-head-txt { flex-grow: 1; min-width: 0; }
+        .gia-head-txt b { display: block; font-size: 14px; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
+        .gia-beta {
+            display: inline-block; font-style: normal;
+            font-size: 9px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+            color: rgba(255,255,255,.75); background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.25);
+            padding: 2px 6px; border-radius: 5px;
+            margin-left: 7px; vertical-align: 1px;
+        }
+        .gia-head-txt span { display: block; font-size: 10.5px; color: rgba(255,255,255,.55); margin-top: 2px; }
+        .gia-x {
+            background: transparent; border: 1px solid rgba(255,255,255,.25);
+            color: rgba(255,255,255,.7); width: 30px; height: 30px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; flex-shrink: 0; transition: all .2s ease;
+        }
+        .gia-x:hover { color: #FFFFFF; border-color: #FFFFFF; }
+        .gia-x:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; }
+
+        .gia-log {
+            flex-grow: 1; overflow-y: auto; padding: 16px;
+            display: flex; flex-direction: column; gap: 14px;
+            scrollbar-width: thin; scrollbar-color: #C9D5E4 transparent;
+        }
+        .gia-log::-webkit-scrollbar { width: 6px; }
+        .gia-log::-webkit-scrollbar-thumb { background: #C9D5E4; border-radius: 3px; }
+        .gia-log::-webkit-scrollbar-track { background: transparent; }
+
+        .gia-msg { max-width: 86%; font-size: 13px; line-height: 1.6; }
+        .gia-msg.me {
+            align-self: flex-end;
+            background: var(--gia-ink);
+            border: 1px solid var(--gia-ink);
+            color: #FFFFFF;
+            padding: 9px 13px; border-radius: 12px 12px 3px 12px;
+        }
+        .gia-msg.gia {
+            align-self: flex-start;
+            background: var(--gia-surface);
+            border: 1px solid var(--gia-border);
+            color: var(--gia-text-sec);
+            padding: 11px 13px; border-radius: 12px 12px 12px 3px;
+        }
+        .gia-msg.gia strong { color: var(--gia-text); font-weight: 600; }
+        .gia-msg.gia p { margin: 0 0 9px; }
+        .gia-msg.gia p:last-of-type { margin-bottom: 0; }
+
+        .gia-cursor {
+            display: inline-block; width: 2px; height: 1em;
+            background: var(--gia-ink); vertical-align: text-bottom;
+            margin-left: 2px; animation: gia-blink 1s infinite;
+        }
+        @keyframes gia-blink { 0%,50% { opacity:1 } 50.1%,100% { opacity:0 } }
+
+        .gia-src { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+        .gia-src a {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 10.5px; font-weight: 600; text-decoration: none;
+            color: var(--gia-text);
+            background: var(--gia-bg);
+            border: 1px solid var(--gia-border-strong);
+            padding: 3px 9px; border-radius: 7px;
+            transition: all .2s ease;
+        }
+        .gia-src a:hover { border-color: var(--gia-ink); background: var(--gia-surface-2); }
+
+        .gia-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: -2px; }
+        .gia-chips button {
+            font-family: inherit; font-size: 11.5px; font-weight: 500;
+            color: var(--gia-text-sec);
+            background: var(--gia-bg);
+            border: 1px solid var(--gia-border-strong);
+            padding: 6px 11px; border-radius: 9999px; cursor: pointer;
+            transition: all .2s ease;
+        }
+        .gia-chips button:hover { color: var(--gia-text); border-color: var(--gia-ink); transform: translateY(-1px); }
+        .gia-chips button:focus-visible { outline: 2px solid var(--gia-ink); outline-offset: 2px; }
+
+        .gia-form {
+            display: flex; gap: 8px; padding: 12px 16px;
+            border-top: 1px solid var(--gia-border);
+            background: var(--gia-surface); flex-shrink: 0;
+        }
+        .gia-form input {
+            flex-grow: 1; min-width: 0;
+            font-family: inherit; font-size: 13px;
+            color: var(--gia-text);
+            background: var(--gia-bg);
+            border: 1px solid var(--gia-border-strong);
+            padding: 10px 13px; border-radius: 10px;
+            outline: none; transition: border-color .2s ease;
+        }
+        .gia-form input::placeholder { color: var(--gia-text-sec); }
+        .gia-form input:focus { border-color: var(--gia-ink); }
+        .gia-form button {
+            background: var(--gia-ink); color: #fff; border: 0;
+            width: 40px; border-radius: 10px; cursor: pointer; font-size: 13px;
+            transition: background .2s ease;
+        }
+        .gia-form button:hover { background: var(--gia-ink-soft); }
+        .gia-form button:disabled { opacity: .45; cursor: not-allowed; }
+        .gia-form button:focus-visible { outline: 2px solid var(--gia-ink); outline-offset: 2px; }
+
+        .gia-foot {
+            padding: 0 16px 11px; font-size: 9.5px; color: var(--gia-text-sec);
+            text-align: center; background: var(--gia-surface); flex-shrink: 0;
+            border-radius: 0 0 1rem 1rem;
+        }
+
+        /* ---------- Mobile ---------- */
+        @media (max-width: 560px) {
+            #gia-root { --gia-avatar: 60px; }
+            #gia-launcher { right: 16px; bottom: var(--gia-lift); }
+            .gia-bubble { font-size: 12px; padding: 7px 14px; }
+            #gia-panel {
+                right: 0; bottom: 0; width: 100%; max-width: 100%;
+                height: 100%; max-height: 100%; border-radius: 0; border: 0;
+            }
+            #gia-root { --gia-head-h: 66px; --gia-crest: 0px; }
+            .gia-avatar { top: 2px; left: 10px; }
+            .gia-head { padding-left: calc(var(--gia-figure) + 18px); }
+            .gia-head, .gia-foot { border-radius: 0; }
+        }
+
+        /* ---------- Reduced motion ---------- */
+        @media (prefers-reduced-motion: reduce) {
+            #gia-launcher { animation: gia-fade .01s forwards; opacity: 1; transform: none; }
+            #gia-panel.gia-open { animation: none; }
+            #gia-fab { transition: none; }
+            .gia-cursor { animation: none; }
+            .gia-avatar { animation: none; transform: none; }
+        }
+    </style>
+
+    <div id="gia-root">
+        <!-- Launcher -->
+        <div id="gia-launcher">
+            <button id="gia-fab" aria-label="Ask Gia — an AI assistant about Garima's work" aria-expanded="false" aria-controls="gia-panel">
+                <span class="gia-bubble"><i class="fa-solid fa-comment-dots"></i>Ask Gia</span>
+                <img src="Chatbot/assistant.webp" alt="" />
+            </button>
+        </div>
+
+        <!-- Panel -->
+        <div id="gia-panel" role="dialog" aria-labelledby="gia-title">
+            <img class="gia-avatar" src="Chatbot/assistant.webp" alt="" />
+            <div class="gia-head">
+                <div class="gia-head-txt">
+                    <b id="gia-title">Gia<em class="gia-beta">In development</em></b>
+                    <span>answers from Garima's work</span>
+                </div>
+                <button class="gia-x" id="gia-close" aria-label="Close Gia"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="gia-log" id="gia-log" aria-live="polite"></div>
+
+            <div class="gia-chips" id="gia-chips"></div>
+
+            <form class="gia-form" id="gia-form">
+                <input id="gia-input" type="text" maxlength="200" autocomplete="off"
+                       placeholder="Ask about her products, experience…" aria-label="Ask Gia a question" />
+                <button type="submit" id="gia-send" aria-label="Send"><i class="fa-solid fa-arrow-up"></i></button>
+            </form>
+
+            <div class="gia-foot">Gia is an AI assistant. Answers come from Garima's portfolio and product work.</div>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        "use strict";
+
+        /* =====================================================================
+           PLACEHOLDER BRAIN  —  replace with a real backend call.
+           Swap `giaAnswer()` below for:
+               const r = await fetch('/.netlify/functions/ask', {...});
+               return await r.json();   // { answer, sources: [{t, u}] }
+           Everything else stays as it is.
+           ===================================================================== */
+        var GIA_FACTS = [
+            { k: ["explified","internship","intern","her job","current role","where does she work","where is she working"],
+              a: "She's a Product Management Intern at Explified since July 2026. She owns product strategy, V1 roadmaps and feature prioritisation across Shopify, the Chrome Web Store and the Atlassian Marketplace — 8 V1 PRDs and 50+ Figma wireframes so far, across ten products.",
+              s: [{t:"Experience", u:"#experience"}, {t:"Products", u:"#products"}] },
+
+            { k: ["how many products","ten products","10 products","portfolio","ecosystems","overview of her work","product portfolio"],
+              a: "Ten, across four ecosystems.\n\nShopify Marketplace has five — StockLyn, Price Gate, Cart Mend, Unturn and Traffiq. Chrome Extensions has two, YT Insights V4 and Lurph AI. The Atlassian Marketplace has two, Nexus AI and Cloud Fix. And there's one internal enterprise product, Explified Team Chat.\n\nNine are AI-oriented; Price Gate is the deliberate exception, a rule-based pricing engine where a model would have added nothing.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["shopify","stocklyn","inventory","forecasting","replenishment","merchant"],
+              a: "Five Shopify apps, all deployed on the Shopify App Store.\n\nStockLyn is the inventory one — demand forecasting from historical sales patterns, stockout and overstock alerts, replenishment recommendations, and fast- versus slow-moving product analysis. She ran the market research, competitor benchmarking and feature-gap analysis behind it, then defined the requirements and workflows.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["traffiq","bot","fraud","fake traffic","risk scoring","detection"],
+              a: "Traffiq is bot detection and traffic intelligence — and it's one of her strongest AI cases.\n\nThe problem: fake traffic, bot-generated accounts and automated cart activity quietly corrupt store analytics, so merchants optimise marketing against numbers that aren't real. Traffiq analyses session behaviour and multiple technical signals — IP and ASN, device and browser, geography, cart behaviour — into a risk score, then uses AI to explain in plain language what looked suspicious and why.\n\nShe defined the problem statement and positioning, worked on the detection architecture, and specified the detection signals, risk-scoring and explanation requirements through MVP scoping and the PRD.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["lurph","browser assistant","multi model","multi-model","gpt","gemini","deepseek","llama","productivity"],
+              a: "Lurph AI is an all-in-one AI browser assistant — image analysis, PDF and document Q&A, page summarisation and contextual chat, email and text rewriting, translation, and AI search with citations, across GPT, Claude, Gemini, Llama and DeepSeek.\n\nThe product management interest is in the structure: rather than shipping a flat list of AI utilities, she grouped them into functional modules — content intelligence, document intelligence, writing, language, search — and established the V1 scope covering multi-model access, contextual memory and privacy controls.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["nexus","enterprise","reconciliation","asset","atlassian","exception","prototype","hardest","toughest","most complex","most technical"],
+              a: "Nexus AI is the most architecturally complex thing she's worked on.\n\nEnterprises keep employee records, device inventories, identities and IT assets in disconnected systems — HR, identity, device management, asset management — so the same person or laptop exists several times, differently. Nexus AI reconciles those records across connected sources, detects mismatches as evidence-backed exceptions, assesses their severity and prioritises them by risk, with a full audit trail of what changed and where it came from.\n\nShe established the V1 scope and workflows, defined the Reconcile, Detect, Assess and Prioritise flows, wrote the PRD and integration requirements, and built a high-fidelity interactive prototype.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["cloud fix","cloudfix","jira","migration","data center","data centre"],
+              a: "Cloud Fix is migration intelligence for organisations moving from Jira Data Center to Jira Cloud. It assesses migration readiness, finds configuration differences and broken dependencies, categorises risks by impact, and explains technical issues in terms a team can act on — before the migration, rather than during it.\n\nShe did the marketplace and category research, the competitive analysis, the PRD and functional specs, and the prototypes and wireframes for engineering handover.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["youtube","yt insights","creator","analytics extension","channel"],
+              a: "YT Insights V4 is a YouTube analytics and content intelligence extension for creators, marketers and researchers — video and channel performance, competitor benchmarking, and AI-assisted insight on what's working.\n\nShe defined the V4 roadmap and feature requirements, covering AI-powered performance intelligence, audience insights, competitive analysis and actionable content opportunities, and did the UI/UX design and wireframing.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["team chat","collaboration","internal product","messaging","channels"],
+              a: "Explified Team Chat is the internal one — an enterprise collaboration platform for workplace communication, team channels and meeting management, with separate role-based experiences for super administrators and regular employees.\n\nShe worked on feature conceptualisation and requirement gathering, designed the messaging, channel and meeting-scheduling workflows, and built the wireframes and interactive prototypes.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["shopassist","scrum","agile","moscow","user stories","backlog","sprint"],
+              a: "ShopAssist AI is a GenAI shopping assistant where she led the full product lifecycle — problem framing, requirements and delivery across 6 milestones for a 7-member Agile team.\n\nShe ran user research across 3 personas, turned it into 15+ SMART user stories and API requirements, and managed a MoSCoW-prioritised backlog with sprint planning and milestone tracking.",
+              s: [{t:"Projects", u:"#projects"}] },
+
+            { k: ["teampulse","design thinking","personas","journey map","hmw","collaboration intelligence"],
+              a: "TeamPulse AI came out of Design Thinking — 6 user interviews surfacing gaps in contribution visibility, workload balance and collaboration-risk detection.\n\nShe translated that into product strategy and MVP requirements using personas, customer journey mapping, Multi-Why analysis, HMWs and prioritisation, then iterated a high-fidelity prototype through usability testing, refining around explainability, fairness, privacy and feasibility.",
+              s: [{t:"Projects", u:"#projects"}] },
+
+            { k: ["rag","retrieval","virtual ta","teaching assistant","hallucination","llm project","grounding"],
+              a: "Her Virtual Teaching Assistant is a RAG-based assistant that resolves student queries from multiple knowledge sources, including the edge cases where a single source isn't enough on its own.\n\nThe part she cares about is the trust layer: source attribution and answer verification against the actual course material, so responses can be checked rather than believed, which is also how she mitigated hallucination.",
+              s: [{t:"Projects", u:"#projects"}] },
+
+            { k: ["glass vortax","vortax","discovery","user interviews","usability"],
+              a: "At Glass Vortax she ran product discovery — 5 user interviews plus competitor analysis, app review mining and community research — and prioritised the findings into product opportunities, user journeys, feature concepts and trust-focused product principles.\n\nShe then designed and evaluated AI-assisted features, interaction flows and trust mechanisms through iterative usability evaluation, and benchmarked the product to recommend UX improvements.",
+              s: [{t:"Experience", u:"#experience"}] },
+
+            { k: ["migri","business development","benchmark","research papers","strategy intern"],
+              a: "At MIGRI Technologies she benchmarked 6 global enterprise AI firms across 4 product dimensions, and the positioning and feature recommendations were adopted into the roadmap. She also mapped workflows across 5 industry verticals to find UX friction and 5 development-ready improvements, and evaluated 10+ AI model benchmarks across 8 research papers while auditing a B2B SaaS product stack.",
+              s: [{t:"Experience", u:"#experience"}] },
+
+            { k: ["education","college","degree","iit","madras","university","studying","study","minor","graduate","finance","economics"],
+              a: "She's an IIT Madras graduate — B.S. in Data Science and Applications, September 2022 to September 2026, with a minor in Finance and Economics.",
+              s: [{t:"Education", u:"#education"}] },
+
+            { k: ["certificate","certification","certified","hackerrank","ibm","prompt engineering","sql"],
+              a: "IBM AI Product Manager Professional Certificate, SQL (Intermediate) from HackerRank, and Prompt Engineering from IBM.",
+              s: [{t:"Certifications", u:"#certifications"}] },
+
+            { k: ["skill","tools","figma","notion","mural","power bi","toolkit","what can she do","competencies"],
+              a: "Product side: discovery, market research, competitive intelligence, product strategy, AI product management, PRD development, roadmapping and prioritisation, user research, wireframing and prototyping, Agile and Scrum.\n\nTools: Figma, Claude, Mural, Notion, Power BI, Excel, Canva, PowerPoint and Webflow. She also works in SQL.",
+              s: [{t:"Skills", u:"#skills"}] },
+
+            { k: ["ai product management","why ai","ai pm","what kind of pm","positioning","strongest"],
+              a: "AI product management and enterprise SaaS product strategy, going by where the work actually is. Nine of her ten products are AI-oriented, and they span both consumer-facing productivity tools and complex B2B systems.\n\nThe four she'd lead with in an interview: Lurph AI for generative AI feature architecture, Nexus AI for enterprise complexity, Traffiq for AI problem definition and risk scoring, and Cloud Fix for technical product thinking.",
+              s: [{t:"Products", u:"#products"}] },
+
+            { k: ["contact","email","reach her","hiring","hire","recruit","opportunity","get in touch","looking for","role"],
+              a: "Email is garima.intern18@gmail.com, and there's a LinkedIn link in the Contact section. She's looking for product management roles, particularly in AI and SaaS.",
+              s: [{t:"Email", u:"mailto:garima.intern18@gmail.com"}, {t:"Contact", u:"#contact"}] },
+
+            { k: ["resume","cv","curriculum"],
+              a: "There's a PDF resume on this page — the Resume section has a download button, and a link to the longer product portfolio write-up alongside it.",
+              s: [{t:"Resume", u:"#resume"}] },
+
+            { k: ["who is she","about her","her background","why product","tell me about her","introduce"],
+              a: "She's an IIT Madras data science graduate working in product management across AI and SaaS. Her approach starts with research rather than features — interviews, competitor benchmarking, review mining — and ends with requirements specific enough to build from: PRDs, journeys, backlogs and wireframes.",
+              s: [{t:"About", u:"#about"}] },
+
+            { k: ["located","location","based in","which city","bihar","india"],
+              a: "She's based in Bihar, India, and studied at IIT Madras through its online BS programme.",
+              s: [{t:"About", u:"#about"}] }
+        ];
+
+        var GIA_EMAIL = "garima.intern18@gmail.com";
+
+        var GIA_FALLBACK = "I'm still in development, so I only cover a few topics for now and that isn't one of them yet. Garima will answer it properly — email her directly.";
+
+        var GIA_GREETING = "Hi — I'm Gia, Garima's assistant. I'm still being built, so I know a handful of topics for now. Ask away, or pick one below.";
+
+        var GIA_CHIPS = [
+            "What does she do at Explified?",
+            "How many products has she worked on?",
+            "What's her most complex product?",
+            "Tell me about Traffiq",
+            "What is Lurph AI?",
+            "Has she worked with RAG?",
+            "What's she studying?",
+            "What certifications does she have?",
+            "What tools does she use?",
+            "What kind of PM is she?",
+            "Is she looking for a role?",
+            "Where's her resume?"
+        ];
+        var GIA_CHIPS_SHOWN = 3;   /* how many to offer at a time */
+
+        /* Normalise to " word word " so every match can be anchored to word edges. */
+        function giaNorm(s) {
+            return (" " + String(s).toLowerCase().replace(/[^a-z0-9+ ]+/g, " ") + " ").replace(/\s+/g, " ");
+        }
+
+        function giaAnswer(q) {
+            var norm   = giaNorm(q);
+            var tokens = norm.trim().split(" ");
+            var best = null, bestScore = 0, bestSpec = 0;
+
+            for (var i = 0; i < GIA_FACTS.length; i++) {
+                var keys = GIA_FACTS[i].k, score = 0, spec = 0;
+
+                for (var j = 0; j < keys.length; j++) {
+                    var key = keys[j], hit = false;
+
+                    if (key.indexOf(" ") !== -1) {
+                        hit = norm.indexOf(" " + key + " ") !== -1;   /* whole phrase */
+                    } else if (key.length < 4) {
+                        hit = tokens.indexOf(key) !== -1;             /* acronyms: exact word only */
+                    } else {
+                        for (var t = 0; t < tokens.length; t++) {     /* longer words may be prefixes */
+                            if (tokens[t].indexOf(key) === 0) { hit = true; break; }
+                        }
+                    }
+                    if (hit) { score++; if (key.length > spec) spec = key.length; }
+                }
+
+                /* more matches wins; on a tie the more specific keyword wins */
+                if (score > bestScore || (score === bestScore && score > 0 && spec > bestSpec)) {
+                    bestScore = score; bestSpec = spec; best = GIA_FACTS[i];
+                }
+            }
+
+            if (best && bestScore > 0) return { answer: best.a, sources: best.s };
+
+            return {
+                answer: GIA_FALLBACK,
+                sources: [{ t: GIA_EMAIL, u: "mailto:" + GIA_EMAIL }]
+            };
+        }
+        /* ===================== end placeholder brain ===================== */
+
+        var launcher = document.getElementById("gia-launcher");
+        var fab      = document.getElementById("gia-fab");
+        var panel    = document.getElementById("gia-panel");
+        var closeBtn = document.getElementById("gia-close");
+        var log      = document.getElementById("gia-log");
+        var chipWrap = document.getElementById("gia-chips");
+        var form     = document.getElementById("gia-form");
+        var input    = document.getElementById("gia-input");
+        var send     = document.getElementById("gia-send");
+        var busy     = false, greeted = false;
+        var asked    = [];                       /* suggestions already used */
+
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function scroll() { log.scrollTop = log.scrollHeight; }
+
+        function addUser(text) {
+            var el = document.createElement("div");
+            el.className = "gia-msg me";
+            el.textContent = text;
+            log.appendChild(el);
+            scroll();
+        }
+
+        function addGia(text, sources, instant) {
+            var el = document.createElement("div");
+            el.className = "gia-msg gia";
+            log.appendChild(el);
+
+            function finish() {
+                if (sources && sources.length) {
+                    var box = document.createElement("div");
+                    box.className = "gia-src";
+                    sources.forEach(function (s) {
+                        var a = document.createElement("a");
+                        a.href = s.u;
+                        a.textContent = s.t;
+                        if (s.u.charAt(0) !== "#") { a.target = "_blank"; a.rel = "noopener"; }
+                        else { a.addEventListener("click", function () { closePanel(); }); }
+                        box.appendChild(a);
+                    });
+                    el.appendChild(box);
+                }
+                busy = false;
+                send.disabled = false;
+                buildChips();
+                scroll();
+            }
+
+            if (instant || reduce) {
+                text.split("\n\n").forEach(function (t) {
+                    var pp = document.createElement("p");
+                    pp.textContent = t;
+                    el.appendChild(pp);
+                });
+                finish();
+                return;
+            }
+
+            var paras = text.split("\n\n");
+            var cur = document.createElement("span");
+            cur.className = "gia-cursor";
+
+            var pi = 0, i = 0, span = null;
+            (function tick() {
+                if (span === null) {
+                    span = document.createElement("p");
+                    el.appendChild(span);
+                    el.appendChild(cur);
+                }
+                if (i < paras[pi].length) {
+                    span.textContent += paras[pi].charAt(i++);
+                    scroll();
+                    setTimeout(tick, 11);
+                } else if (++pi < paras.length) {
+                    i = 0; span = null;
+                    setTimeout(tick, 90);
+                } else {
+                    cur.remove();
+                    finish();
+                }
+            })();
+        }
+
+        function ask(q) {
+            if (busy || !q.trim()) return;
+            busy = true;
+            send.disabled = true;
+            chipWrap.style.display = "none";
+            if (asked.indexOf(q) === -1) asked.push(q);
+            addUser(q.trim());
+            var res = giaAnswer(q.trim());
+            setTimeout(function () { addGia(res.answer, res.sources, false); }, 320);
+        }
+
+        function buildChips() {
+            var left = GIA_CHIPS.filter(function (c) { return asked.indexOf(c) === -1; });
+            if (!left.length) { chipWrap.style.display = "none"; return; }
+
+            chipWrap.innerHTML = "";
+            left.slice(0, GIA_CHIPS_SHOWN).forEach(function (c) {
+                var b = document.createElement("button");
+                b.type = "button";
+                b.textContent = c;
+                b.addEventListener("click", function () { ask(c); });
+                chipWrap.appendChild(b);
+            });
+            log.appendChild(chipWrap);          /* always sits below the latest reply */
+            chipWrap.style.display = "flex";
+        }
+
+        function openPanel() {
+            panel.classList.add("gia-open");
+            launcher.style.display = "none";
+            fab.setAttribute("aria-expanded", "true");
+            if (!greeted) {
+                greeted = true;
+                busy = true; send.disabled = true;
+                addGia(GIA_GREETING, null, false);
+            }
+            setTimeout(function () { input.focus(); }, 60);
+        }
+
+        function closePanel() {
+            panel.classList.remove("gia-open");
+            launcher.style.display = "flex";
+            fab.setAttribute("aria-expanded", "false");
+            fab.focus();
+        }
+
+        fab.addEventListener("click", openPanel);
+        closeBtn.addEventListener("click", closePanel);
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var v = input.value;
+            input.value = "";
+            ask(v);
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && panel.classList.contains("gia-open")) closePanel();
+        });
+    })();
+    </script>
+    <!-- =================== END GIA · PORTFOLIO ASSISTANT =================== -->
+
+</body>
+</html>
